@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-22.0.1.jdk/Contents/Home'
+        JAVA_HOME = '/Users/wajdibenrabah/Library/Java/JavaVirtualMachines/openjdk-22.0.1/Contents/Home'
         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
         ANDROID_HOME = '/Users/wajdibenrabah/Library/Android/sdk'
     }
