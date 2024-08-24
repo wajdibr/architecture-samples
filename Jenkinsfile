@@ -1,4 +1,4 @@
-<pipeline {
+pipeline {
     agent any
     tools {
         jdk 'JDK11'  // ou 'JDK17' si vous préférez Java 17
