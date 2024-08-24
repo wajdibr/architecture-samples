@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        ANDROID_HOME = '/Users/wajdibenrabah/Library/Android/sdk'
+    }
     stages {
         stage('Checkout') {
             steps {
