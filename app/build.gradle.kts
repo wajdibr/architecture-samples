@@ -20,8 +20,12 @@ plugins {
     alias(libs.plugins.kapt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
-}
+    kotlin("jvm") version "1.6.21"
 
+}
+kotlin {
+    jvmToolchain(11)
+}
 android {
     compileSdk = libs.versions.compileSdk.get().toInt()
 
