@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-11.0.x.jdk/Contents/Home'  // Remplacez x par votre version exacte
+        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-22.0.1.jdk/Contents/Home'
         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
         ANDROID_HOME = '/Users/wajdibenrabah/Library/Android/sdk'
     }
@@ -9,9 +9,9 @@ pipeline {
         stage('Environment Check') {
             steps {
                 sh 'java -version'
-                sh './gradlew --version'
                 sh 'echo $JAVA_HOME'
                 sh 'echo $ANDROID_HOME'
+                sh './gradlew --version'
             }
         }
         stage('Build') {
