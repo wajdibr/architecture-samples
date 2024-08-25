@@ -16,13 +16,15 @@
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    /*alias(libs.plugins.kotlin.android)*/
     alias(libs.plugins.kapt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    kotlin("android") version "1.8.0" apply false
+
 }
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(22)
 }
 android {
     compileSdk = libs.versions.compileSdk.get().toInt()
@@ -102,8 +104,7 @@ android {
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         kotlinOptions {
-            freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-            freeCompilerArgs += "-opt-in=kotlin.Experimental"
+            jvmTarget = "17"
         }
     }
 }
